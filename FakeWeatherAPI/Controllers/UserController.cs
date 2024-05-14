@@ -7,7 +7,7 @@ namespace FakeWeatherAPI.Controllers;
 
 
 [ApiController]
-[Route("[controller]/[action]")]
+[Route("[controller]")]
 public class UserController : Controller
 {
     private readonly IUserRepository _userRepository;
@@ -29,6 +29,7 @@ public class UserController : Controller
     
     
     [HttpPost]
+    [Route("[action]")]
     public IActionResult Create([FromBody] CreateUserRequest request)
     {
         User user = _userRepository.RegisterUser(request.Username);
@@ -37,6 +38,7 @@ public class UserController : Controller
 
 
     [HttpPost]
+    [Route("[action]")]
     public IActionResult AddCities([FromBody] AddCitiesRequest request)
     {
         (string username, string[] cityNames) = request;
