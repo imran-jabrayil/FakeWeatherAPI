@@ -14,7 +14,6 @@ public class WeatherRepository : IWeatherRepository
     public WeatherRepository(IOptions<WeatherRepositoryOptions> options)
     {
         _timeDiff = options.Value.DelayInMinutes;
-        Console.WriteLine(_timeDiff);
     }
     
     
