@@ -35,6 +35,6 @@ public class WeatherRepository : IWeatherRepository
         
         
         Random random = new Random(DateTime.Now.Millisecond);
-        _weatherForecasts[cityName] = new WeatherForecast(random.Next(10, 30), DateTime.Now);
+        _weatherForecasts[cityName] = new WeatherForecast(cityName, DateTime.Now, random.Next(10, 30));
     }
 }

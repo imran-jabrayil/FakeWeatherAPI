@@ -1,8 +1,9 @@
 namespace FakeWeatherAPI.Models;
 
 public record WeatherForecast(
-    int TemperatureC,
-    DateTime LastUpdated)
+    string City,
+    DateTime LastUpdated,
+    int TemperatureC)
 {
     public int TemperatureF => TemperatureC * 9 / 5 + 32;
 }
